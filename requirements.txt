@@ -1,6 +1,7 @@
 streamlit
 pandas
 altair
-numpy
 matplotlib
-catboost
+numpy>=1.22
+catboost>=1.0
+
