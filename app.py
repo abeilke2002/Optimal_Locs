@@ -8,7 +8,6 @@ from matplotlib.patches import Circle, Rectangle
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import matplotlib.image as mpimg
 from matplotlib.backends.backend_pdf import PdfPages
-from catboost import CatBoostRegressor
 import io
 
 st.set_page_config(
