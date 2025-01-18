@@ -20,7 +20,7 @@ st.set_page_config(
 alt.themes.enable(None)
 
 #### 
-fall_data = pd.read_csv("/Users/aidanbeilke/Desktop/Purdue_Base/newman_proj/csvs/fall_xrv.csv")
+fall_data = pd.read_csv("fall_xrv.csv")
 
 ####
 st.sidebar.header("Select a Player-Pitch Type")
@@ -66,7 +66,7 @@ def create_plot(df, player, pitch_types, count, return_pdf = False):
     elif count == 'All':
         fall_xrv['count'] = np.random.randint(0, 11, size = len(fall_xrv))
 
-    xrv_model = "/Users/aidanbeilke/Desktop/Purdue_Base/newman_proj/models/xrv_model.pkl"
+    xrv_model = "xrv_model.pkl"
 
     with open(xrv_model, 'rb') as file:
         xrv_model = pickle.load(file)
@@ -84,8 +84,8 @@ def create_plot(df, player, pitch_types, count, return_pdf = False):
     num_pitch_types = len(pitch_types)
     rows = num_pitch_types 
     cols = len(platoon_states)  
-    rimage_path = "/Users/aidanbeilke/Desktop/Purdue_Base/newman_proj/location_folder/rbatter.jpg"
-    limage_path = "/Users/aidanbeilke/Desktop/Purdue_Base/newman_proj/location_folder/lbatter.jpg"
+    rimage_path = "rbatter.jpg"
+    limage_path = "lbatter.jpg"
 
     # Create the subplots
     fig, axes = plt.subplots(rows, cols, figsize=(6 * cols, 4 * rows), sharex=True, sharey=True)
