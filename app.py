@@ -31,7 +31,14 @@ player_data = fall_data[fall_data['player_name'] == selected_player]
 pitch_types = sorted(player_data['pitch_type'].unique())
 selected_pitch_type = st.sidebar.multiselect("Select Pitch Type", 
                                              pitch_types,
-                                             help = "Choose 1 or More Pitch Types")
+                                             help = "1 to 3 Selected Pitch Types for Best Display")
+
+st.sidebar.markdown("---")  # Optional divider
+st.sidebar.markdown(
+    '''**Note:** The circle is just a helpful indicator of where to throw.
+                 There are likely other areas of the graph that are optimal
+                 pitch locations outside of just the circle.'''
+)
 
 
 #### 
