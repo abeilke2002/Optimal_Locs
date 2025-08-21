@@ -25,8 +25,6 @@ To start, I tested a basic linear regression model under the assumption that the
 
 Below is a look at the feature importance plot:
 
-<img width="990" height="590" alt="image" src="https://github.com/user-attachments/assets/c4ffaee6-76e5-44cc-bfad-e545fe7fddfe" />
-
 <img width="1898" height="1090" alt="image" src="https://github.com/user-attachments/assets/17c06a6f-7b28-4f57-9400-a82f56bcfdf1" />
 
 ### iVB Over Expected Model
