@@ -44,7 +44,7 @@ For this model, I leveraged the Optuna package for hyperparameter optimization a
 
 Below is a look at the feature importance results:
 
-<img width="1898" height="1090" alt="image" src="https://github.com/user-attachments/assets/ad6a58eb-01f3-4d00-817c-746e7690b8bf" />
+<img width="951" height="545" alt="image" src="https://github.com/user-attachments/assets/df2890c5-f6ce-4036-80f0-f826c400360b" />
 
 ### Location Model
 
