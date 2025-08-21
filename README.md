@@ -23,6 +23,11 @@ Because Major League Baseball and Baseball Savant had come out with arm angle fo
 ##### Results
 To start, I tested a basic linear regression model under the assumption that the relationship between variables was approximately linear. The model achieved an RMSE of 6.68 when predicting arm angle. I then leveraged CatBoost in combination with the Optuna hyperparameter optimization package in Python, which improved performance to an RMSE of 4.99. Given this improvement, I selected CatBoost as the final model.
 
+Below is a look at the feature importance plot:
+
+<img width="990" height="590" alt="image" src="https://github.com/user-attachments/assets/c4ffaee6-76e5-44cc-bfad-e545fe7fddfe" />
+
+
 ### iVB Over Expected Model
 
 As mentioned earlier, the motivation for this model stemmed from the anticipated importance of its relationship with pitch location. Generally, pitchers with higher iVB perform better at the top of the strike zone, and vice versa. However, there are nuances that can make this relationship non-linear. Because the model is ultimately trained on run values derived from hitters’ decisions, it was important to account for the element of deception—what the batter perceives from the pitcher.
@@ -40,7 +45,7 @@ For this model, I leveraged the Optuna package for hyperparameter optimization a
 
 Below is a look at the feature importance results:
 
-<img width="954" height="545" alt="image" src="https://github.com/user-attachments/assets/b87b2bfb-ab98-4e89-87f5-98e84181c944" />
+<img width="1898" height="1090" alt="image" src="https://github.com/user-attachments/assets/ad6a58eb-01f3-4d00-817c-746e7690b8bf" />
 
 ### Location Model
 
