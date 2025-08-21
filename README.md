@@ -23,5 +23,45 @@ Because Major League Baseball and Baseball Savant had come out with arm angle fo
 ##### Results
 To start, I tested a basic linear regression model under the assumption that the relationship between variables was approximately linear. The model achieved an RMSE of 6.68 when predicting arm angle. I then leveraged CatBoost in combination with the Optuna hyperparameter optimization package in Python, which improved performance to an RMSE of 4.99. Given this improvement, I selected CatBoost as the final model.
 
+### iVB Over Expected Model
+
+As mentioned earlier, the motivation for this model stemmed from the anticipated importance of its relationship with pitch location. Generally, pitchers with higher iVB perform better at the top of the strike zone, and vice versa. However, there are nuances that can make this relationship non-linear. Because the model is ultimately trained on run values derived from hitters’ decisions, it was important to account for the element of deception—what the batter perceives from the pitcher.
+
+For example, a fastball with 13 iVB could perform better at the top of the zone than one with 18 iVB, due to other pitch characteristics that hitters subconsciously recognize. In this way, the model also helped quantify deception as part of the analysis. When selecting features, I focused on variables that reflect both what the hitter can see and what the pitcher can control.
+#### Features
+- Release Speed
+- Spin Rate
+- Arm Angle
+- Release Position z
+- Release Position x
+- Extension
+#### Results
+For this model, I leveraged the Optuna package for hyperparameter optimization and used XGBoost to build the predictive model. The best iteration for predicting iVB achieved an RMSE of 3.8. While the RMSE could likely have been improved with additional or more complex features, I chose to prioritize interpretability by focusing on variables that reflect what the hitter can see and what the pitcher can control.
+
+Below is a look at the feature importance results:
+
+<img width="954" height="545" alt="image" src="https://github.com/user-attachments/assets/b87b2bfb-ab98-4e89-87f5-98e84181c944" />
+
+### Location Model
+
+After building the initial model components, I turned to the final and most important piece of this project. The objective was to train a model on both pitch characteristics and location in order to quantify the value of any pitch in any situation. The response variable for this model was the run value of a pitch outcome, conditioned on count, using data from the MLB level.
+
+Once trained, this model allows us to fix a pitcher’s average pitch characteristics and then simulate 100,000 randomized pitch locations. By holding pitch characteristics constant, we can isolate how pitch value varies solely as a function of location. 
+#### Features
+- Release Speed
+- Release position x, z
+- Arm angle
+- Extension
+- Platoon State
+- Count
+- Break (Horizontal and Vertical)
+- iVB over expected
+- Spin Rate
+- Spin Axis
+- Vertical Approach Angle
+#### Results
+For this model I wanted to go with a boosting model like Catboost because of it's ability to capture some of the complicated, non-linear relationships between the pitch charactersitics and location. The run time with Catboost was also enhanced in comparison to some of the other boosting models I tried out.
+
+Below is a look at the feature importance plot
 
 
