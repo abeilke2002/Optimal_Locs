@@ -64,4 +64,14 @@ For this model I wanted to go with a boosting model like Catboost because of it'
 
 Below is a look at the feature importance plot
 
+## App Output
+
+Now that we have the model to predict based on pitch characteristics and location, we can now plot these predictions and have a better idea of what pitches perform well and where. Here is an example of what the output looks like in a count neutral setting.
+
+<img width="1058" height="351" alt="image" src="https://github.com/user-attachments/assets/eff2dfc0-c0f7-4300-8842-9414cd76425a" />
+
+
+
+
+
 
