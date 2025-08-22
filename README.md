@@ -66,7 +66,9 @@ Once trained, this model allows us to fix a pitcher’s average pitch characteri
 #### Results
 For this model I wanted to go with a boosting model like Catboost because of it's ability to capture some of the complicated, non-linear relationships between the pitch charactersitics and location. The run time with Catboost was also enhanced in comparison to some of the other boosting models I tried out.
 
-Below is a look at the feature importance plot
+Below is a look at the final feature importance plot:
+
+<img width="949" height="545" alt="image" src="https://github.com/user-attachments/assets/ed55b049-adb4-4973-a940-98c9ee164b6f" />
 
 ## App Output
 
